@@ -1,14 +1,18 @@
-import React from 'react';
+import React  from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App';
+import App  from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { appStore,  RootContext } from './store';
+
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
 root.render(
   <React.StrictMode>
-    <App />
+    <RootContext.Provider value={appStore}>
+      <App />
+    </RootContext.Provider>
   </React.StrictMode>
 );
 
